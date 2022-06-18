@@ -36,6 +36,7 @@ public class ManagerTest {
 
         Assertions.assertArrayEquals(expected, actual);
     }
+
     @Test
     public void TestGetAll() {
         Manager manager = new Manager();
