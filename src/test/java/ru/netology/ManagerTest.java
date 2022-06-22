@@ -48,6 +48,7 @@ public class ManagerTest {
 
         NameFilm[] actual = manager.getAll();
         NameFilm[] expected = {film5, film4, film3, film2, film1};
+        Assertions.assertArrayEquals(expected, actual);
     }
 
     @Test
@@ -66,23 +67,23 @@ public class ManagerTest {
         manager.save(film11);
 
         NameFilm[] actual = manager.findLast();
-        NameFilm[] expected = {film11, film10, film9, film8, film7, film6, film5, film4, film3, film2};
+        NameFilm[] expected = {film11, film10, film9, film8, film7};
+        Assertions.assertArrayEquals(expected, actual);
 
     }
 
     @Test
-    public void TestFindLastmin() {
+    public void TestFindLastMin() {
         Manager manager = new Manager();
         manager.save(film1);
         manager.save(film2);
         manager.save(film3);
         manager.save(film4);
-        manager.save(film5);
-        manager.save(film6);
 
 
         NameFilm[] actual = manager.findLast();
-        NameFilm[] expected = {film6, film5, film4, film3, film2, film1};
+        NameFilm[] expected = {film4, film3, film2, film1};
+        Assertions.assertArrayEquals(expected, actual);
 
     }
 }

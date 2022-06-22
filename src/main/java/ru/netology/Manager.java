@@ -30,14 +30,14 @@ public class Manager {
     }
 
     public NameFilm[] findLast() {
-        int resultLength;
-        if (names.length < 11) {
+        int resultLength = 5;
+        if (names.length < resultLength) {
             resultLength = names.length;
         } else {
-            resultLength = 10;
+            resultLength = resultLength;
         }
         NameFilm[] result = new NameFilm[resultLength];
-        for (int i = 0; i < result.length; i++) {
+        for (int i = 0; i < resultLength; i++) {
             int index = names.length - i - 1;
             result[i] = names[index];
         }
