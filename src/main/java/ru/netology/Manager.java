@@ -30,7 +30,7 @@ public class Manager {
     }
 
     public NameFilm[] findLast() {
-        int resultLength = 5;
+        int resultLength = 10;
         if (names.length < resultLength) {
             resultLength = names.length;
         } else {

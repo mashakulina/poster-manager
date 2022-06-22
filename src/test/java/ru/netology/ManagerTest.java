@@ -67,7 +67,7 @@ public class ManagerTest {
         manager.save(film11);
 
         NameFilm[] actual = manager.findLast();
-        NameFilm[] expected = {film11, film10, film9, film8, film7};
+        NameFilm[] expected = {film11, film10, film9, film8, film7, film6, film5, film4, film3, film2};
         Assertions.assertArrayEquals(expected, actual);
 
     }
