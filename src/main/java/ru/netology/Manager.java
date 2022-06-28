@@ -1,45 +1,39 @@
 package ru.netology;
 
-import ru.netology.domain.NameFilm;
 
 public class Manager {
+    private String[] films = new String[0];
+    private int limit;
 
-    private NameFilm[] names = new NameFilm[0];
-
-    public void save(NameFilm name) {
-        int length = names.length + 1;
-        NameFilm[] tmp = new NameFilm[length];
-        System.arraycopy(names, 0, tmp, 0, names.length);
-
-        int lastIndex = tmp.length - 1;
-        tmp[lastIndex] = name;
-        names = tmp;
+    public Manager() {
+        limit = 10;
     }
 
-    public NameFilm[] findAll() {
-        return names;
+    public Manager(int limit) {
+        this.limit = limit;
     }
 
-    public NameFilm[] getAll() {
-        NameFilm[] result = new NameFilm[names.length];
-        for (int i = 0; i < result.length; i++) {
-            int index = names.length - i - 1;
-            result[i] = names[index];
+    public void add(String film) {
+        String[] tmp = new String[films.length + 1];
+        for (int i = 0; i < films.length; i++) {
+            tmp[i] = films[i];
         }
-        return result;
+        tmp[tmp.length - 1] = film;
+        films = tmp;
     }
-
-    public NameFilm[] findLast() {
-        int resultLength = 10;
-        if (names.length < resultLength) {
-            resultLength = names.length;
+    public String[] findAll() {
+        return films;
+    }
+    public String[] findLast() {
+        String[] result;
+        if (limit < films.length) {
+            result = new String[limit];
         } else {
-            resultLength = resultLength;
+            result = new String[films.length];
         }
-        NameFilm[] result = new NameFilm[resultLength];
-        for (int i = 0; i < resultLength; i++) {
-            int index = names.length - i - 1;
-            result[i] = names[index];
+        for (int i = 0; i < result.length; i++) {
+            int index = films.length - i - 1;
+            result[i] = films[index];
         }
         return result;
     }
